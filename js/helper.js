@@ -70,6 +70,18 @@ $(document).ready(function() {
   });
 });
 
+function inName(name) {
+     var namesArray = name.trim().split(" ");
+     var firstName = namesArray[0].slice(0,1).toUpperCase() +
+     namesArray[0].slice(1).toLowerCase();
+
+     var lastName = namesArray[1].toUpperCase();
+
+     return firstName + " " + lastName;
+}
+
+$('#main').append(internationalizeButton);
+
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
 */
@@ -87,6 +99,11 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
+  let x = loc.pageX;
+  let y = loc.pageY;
+
+  logClicks(x,y);
+
 });
 
 
